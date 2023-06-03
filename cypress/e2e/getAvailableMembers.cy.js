@@ -57,8 +57,8 @@ describe("Test Plan - getAvailableMembers", () => {
     });
   });
 
-  it.skip("Verify given Valid survey id", () => {
-    const surveyID = 1000061; //Participation.csv does not have surveyID 1 with this status
+  it.skip("Verify given invalid survey id", () => {
+    const surveyID = 1000061; //Invalid Survey ID
 
     cy.request("GET", `/api/surveys/${surveyID}/members/not-invited `, {
       failOnStatusCode: false,
