@@ -7,9 +7,10 @@ describe("Test Plan - getSurveyofMembers", () => {
     [1, 82],
     [1, 95],
   ]; // I got this array from the participant.csv table
+
   it("Verify given a member id it throws at least one survey", () => {
     const memberID = 1;
-    const surveyID = 16;
+    // const surveyID = 16;
     let surveyCount = 0;
 
     cy.request("GET", `/api/members/${memberID}`).then((response) => {
@@ -85,6 +86,21 @@ describe("Test Plan - getSurveyofMembers", () => {
         (surveyName) => surveyName.name === "Marlenis QA at Dynata" //name does not exist on Survey.csv
       );
       expect(surveyName).to.not.exist;
+    });
+  });
+
+   it.skip("Verify given Valid survey id and invalid survey status", () => {
+    const surveyID = 1; //Participation.csv does not have surveyID 1 with this status
+    const statusSurvey = "DynataQA"; // Change the status you want
+
+    cy.request(
+      "GET",
+      `/api/surveys/${surveyID}/members?status=${statusSurvey}`,
+      { failOnStatusCode: false }
+    ).then((response) => {
+      expect(response.body.status).to.equal(500);
+
+      //It is not documented, and it should be fixed
     });
   });
 });
