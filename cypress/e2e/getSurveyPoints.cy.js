@@ -33,7 +33,7 @@ describe("Test Plan - getSurveyPoints", () => {
     cy.request("GET", `/api/members/${memberId}/points`, {
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(400);
       /* But it should be 400-Bad Request
         status code indicates that the server cannot process the request due to client error. 
         In this case, the invalid Member ID provided by the client would be considered a client 
@@ -48,7 +48,7 @@ describe("Test Plan - getSurveyPoints", () => {
     cy.request("GET", `/api/members/${memberId}/points`, {
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(400);
       /* But it should be 400-Bad Request
         status code indicates that the server cannot process the request due to client error. 
         In this case, the invalid Member ID provided by the client would be considered a client 
@@ -64,7 +64,7 @@ describe("Test Plan - getSurveyPoints", () => {
     cy.request("GET", `/api/members/${memberId}/points`, {
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(400);
       /* But it should be 400-Bad Request
         status code indicates that the server cannot process the request due to client error. 
         In this case, the invalid Member ID provided by the client would be considered a client 
@@ -80,7 +80,7 @@ describe("Test Plan - getSurveyPoints", () => {
     cy.request("GET", `/api/members/${memberId}/points`, {
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(400);
       /* But it should be 400-Bad Request
         status code indicates that the server cannot process the request due to client error. 
         In this case, the invalid Member ID provided by the client would be considered a client 
@@ -96,7 +96,7 @@ describe("Test Plan - getSurveyPoints", () => {
     cy.request("GET", `/api/members/${memberId}/points`, {
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      expect(response.status).to.equal(400);
       /* But it should be 400-Bad Request
         status code indicates that the server cannot process the request due to client error. 
         In this case, the invalid Member ID provided by the client would be considered a client 
